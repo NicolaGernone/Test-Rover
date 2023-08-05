@@ -1,0 +1,5 @@
+memory-profiler
+line_profiler
+black
+pytest
+pytest-cov
