@@ -17,7 +17,7 @@ class MissionControl:
         self.rovers_and_commands = rovers_and_commands
         self.final_positions = []
 
-    def run(self):
+    def run(self) -> list:
         """
         Runs the mission.
 

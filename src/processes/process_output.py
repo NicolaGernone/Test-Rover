@@ -1,4 +1,4 @@
-def process_output(output_list):
+def process_output(output_list) -> str:
     """
     Process the output.
 

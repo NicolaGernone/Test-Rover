@@ -5,7 +5,7 @@ from src.utils.logger import get_logger
 logger = get_logger()
 
 
-def normalize_input_string(input_str):
+def normalize_input_string(input_str) -> list:
     """
     Convert input string letters to uppercase and ensure there are spaces between characters.
 
