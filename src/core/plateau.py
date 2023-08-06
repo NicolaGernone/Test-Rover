@@ -10,8 +10,7 @@ class Plateau:
     width: int
     height: int
 
-    @staticmethod
-    def is_within_bounds(x, y, width, height):
+    def is_within_bounds(self, x: int, y: int) -> bool:
         """
         Checks if a point is within the bounds of the plateau.
 
@@ -24,4 +23,4 @@ class Plateau:
         Returns:
             bool: True if the point is within the bounds, False otherwise.
         """
-        return 0 <= x <= width and 0 <= y <= height
+        return 0 <= x <= self.width and 0 <= y <= self.height

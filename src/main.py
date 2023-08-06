@@ -28,8 +28,8 @@ def main():
             logger.info("Invalid choice. Exiting...")
             return
 
-        plateau, rovers_and_commands = process_input(input_str)
-        mission_control = MissionControl(plateau, rovers_and_commands)
+        rovers_and_commands = process_input(input_str)
+        mission_control = MissionControl(rovers_and_commands)
         output = mission_control.run()
         print(process_output(output))
     except FileNotFoundError:

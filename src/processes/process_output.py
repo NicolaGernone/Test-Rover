@@ -8,4 +8,4 @@ def process_output(output_list):
     Returns:
         str: The output string.
     """
-    return '\n'.join(output_list)
+    return '\n'.join([' '.join(map(str, t)) for t in output_list])
