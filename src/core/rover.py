@@ -1,6 +1,8 @@
 from dataclasses import dataclass
-from config.choices import COMMANDS
+
+from core.command import MoveCommand, TurnCommand
 from core.plateau import Plateau
+
 
 @dataclass
 class Rover:
@@ -12,6 +14,12 @@ class Rover:
     y: int
     orientation: str
     plateau: Plateau
+    
+    COMMANDS = {
+        'M': MoveCommand,
+        'L': lambda: TurnCommand('L'),
+        'R': lambda: TurnCommand('R')
+    }
 
     def process_commands(self, commands):
         """
@@ -21,7 +29,7 @@ class Rover:
             commands (str): A string of commands where each character is a command.
         """
         for command in commands:
-            COMMANDS[command](self).execute()
+            self.COMMANDS[command]().execute(self)
 
     def __str__(self):
         return f"{self.x} {self.y} {self.orientation}"
