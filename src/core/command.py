@@ -1,4 +1,4 @@
-from config.choices import DIRECTIONS, TURNS
+from src.config.choices import DIRECTIONS, TURNS
 
 
 class Command:

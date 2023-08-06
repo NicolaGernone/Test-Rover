@@ -1,8 +1,9 @@
 import sys
-from core.mission_control import MissionControl
-from processes.process_input import process_input
-from processes.process_output import process_output
-from utils.logger import get_logger
+
+from src.core.mission_control import MissionControl
+from src.processes.process_input import process_input
+from src.processes.process_output import process_output
+from src.utils.logger import get_logger
 
 logger = get_logger()
 

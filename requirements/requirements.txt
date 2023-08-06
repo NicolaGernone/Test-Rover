@@ -3,3 +3,5 @@ line_profiler
 black
 pytest
 pytest-cov
+pytest-mock
+factory-boy

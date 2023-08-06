@@ -1,4 +1,4 @@
-from core.plateau import Plateau
+from src.core.plateau import Plateau
 
 
 class MissionControl:

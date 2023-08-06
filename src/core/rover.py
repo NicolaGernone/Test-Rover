@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from core.command import MoveCommand, TurnCommand
-from core.plateau import Plateau
+from src.core.command import MoveCommand, TurnCommand
+from src.core.plateau import Plateau
 
 
 @dataclass

@@ -1,6 +1,6 @@
-from core.plateau import Plateau
-from core.rover import Rover
-from utils.logger import get_logger
+from src.core.plateau import Plateau
+from src.core.rover import Rover
+from src.utils.logger import get_logger
 
 logger = get_logger()
 
