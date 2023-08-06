@@ -4,6 +4,7 @@ from utils.logger import get_logger
 
 logger = get_logger()
 
+
 def normalize_input_string(input_str):
     """
     Convert input string letters to uppercase and ensure there are spaces between characters.
@@ -15,14 +16,15 @@ def normalize_input_string(input_str):
         str: The normalized input string.
     """
     input_str = input_str.upper()
-    
+
     formatted_parts = []
-    for part in input_str.strip().split('\n'):
+    for part in input_str.strip().split("\n"):
         if len(part) > 1 and not part.isdigit():
             formatted_parts.append(tuple(part.strip().split()))
         else:
             formatted_parts.append(tuple(part.split()))
     return formatted_parts
+
 
 def split_adjacent_chars(chars):
     """
@@ -51,7 +53,7 @@ def validate_orientation(orientation):
     Raises:
         ValueError: If orientation is invalid.
     """
-    if orientation not in ['N', 'E', 'S', 'W']:
+    if orientation not in ["N", "E", "S", "W"]:
         raise ValueError(f"Invalid orientation {orientation}")
 
 
@@ -65,7 +67,7 @@ def validate_commands(commands):
     Raises:
         ValueError: If any command is invalid.
     """
-    if any(command not in ['L', 'R', 'M'] for command in commands):
+    if any(command not in ["L", "R", "M"] for command in commands):
         raise ValueError(f"Invalid commands {commands}")
 
 
@@ -84,7 +86,7 @@ def process_input(input_str):
         plateau_width, plateau_height = map(int, lines[0])
         plateau = Plateau(plateau_width, plateau_height)
         rovers_and_commands = []
-        
+
         for i in range(1, len(lines), 2):
             x, y, orientation = split_adjacent_chars(lines[i])
             validate_orientation(orientation)
@@ -93,10 +95,9 @@ def process_input(input_str):
             commands = split_adjacent_chars(lines[i + 1])
             validate_commands(commands)
             rovers_and_commands.append((rover, commands))
-        
+
         return rovers_and_commands
     except ValueError as ve:
         print(f"Invalid input: {ve}")
         logger.exception(f"Invalid input: {ve}")
         raise
-

@@ -1,5 +1,6 @@
 from config.choices import DIRECTIONS, TURNS
 
+
 class Command:
     """
     Represents a command that can be executed by a rover.

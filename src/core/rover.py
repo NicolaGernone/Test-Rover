@@ -14,11 +14,11 @@ class Rover:
     y: int
     orientation: str
     plateau: Plateau
-    
+
     COMMANDS = {
-        'M': MoveCommand,
-        'L': lambda: TurnCommand('L'),
-        'R': lambda: TurnCommand('R')
+        "M": MoveCommand,
+        "L": lambda: TurnCommand("L"),
+        "R": lambda: TurnCommand("R"),
     }
 
     def process_commands(self, commands):
