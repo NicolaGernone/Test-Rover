@@ -29,7 +29,7 @@ class MoveCommand(Command):
         """
         dx, dy = DIRECTIONS[rover.orientation]
         new_x, new_y = rover.x + dx, rover.y + dy
-        if rover.plateau.is_within_bounds(new_x, new_y):
+        if rover.plateau.is_within_bounds(x=new_x, y=new_y):
             rover.x, rover.y = new_x, new_y
 
 

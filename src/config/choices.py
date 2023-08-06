@@ -1,6 +1,3 @@
-from core.command import MoveCommand, TurnCommand
-
-
 DIRECTIONS = {
     'N': (0, 1),
     'E': (1, 0),
@@ -22,10 +19,3 @@ TURNS = {
         'W': 'N'
     }
 }
-
-
-COMMANDS = {
-        'M': MoveCommand,
-        'L': lambda: TurnCommand('L'),
-        'R': lambda: TurnCommand('R')
-    }
