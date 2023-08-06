@@ -47,3 +47,38 @@ The output for each rover will be its final coordinates and heading. For the giv
 1 3 N
 5 1 E
 ```
+
+### Extra
+
+If you want to run some tests or check some memory usage and timing in the [Makefile](./Makefile) you can find some commands to run this checks.
+Follom this instructions:
+
+- Run the setup:
+
+```bash
+make setup
+```
+
+- Run this command to check memory and timing:
+
+```bash
+make profile
+
+make memory-profile
+
+make line-profile
+```
+
+- To check tests and coverage:
+
+```bash
+make test
+
+make coverage
+```
+
+## Observations
+
+I prefer to avoid using Docker to keep the script execution simple and maintain a user-friendly experience. For virtual environment and dependency management, I can utilize Poetry. However, for running the script, I don't need any additional dependencies; it's only required for local testing of memory timing and tests.
+
+To ensure a hassle-free experience for users and prevent potential installation issues with third-party tools, I have decided to refrain from using Docker.
