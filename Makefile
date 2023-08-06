@@ -28,7 +28,7 @@ run:
 
 # Run tests
 test:
-	$(PYTHON) -m pytest
+	$(PYTHON) -m pytest $(SRC)/tests/
 
 # Reformat code
 lint:
