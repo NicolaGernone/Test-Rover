@@ -1,0 +1,5 @@
+5 5
+1 2 N
+L M L M L M LM M
+3 3 e
+M M R M M R M R R M
