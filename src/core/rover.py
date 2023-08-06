@@ -21,7 +21,7 @@ class Rover:
         "R": lambda: TurnCommand("R"),
     }
 
-    def process_commands(self, commands):
+    def process_commands(self, commands) -> None:
         """
         Processes a list of commands.
 
