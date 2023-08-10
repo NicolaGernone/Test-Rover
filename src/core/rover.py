@@ -16,9 +16,9 @@ class Rover:
     plateau: Plateau
 
     COMMANDS = {
+        Turn.LEFT.value: lambda: TurnCommand(Turn.LEFT),
+        Turn.RIGHT.value: lambda: TurnCommand(Turn.RIGHT),
         "M": MoveCommand,
-        "L": lambda: TurnCommand("L"),
-        "R": lambda: TurnCommand("R"),
     }
 
     def process_commands(self, commands) -> None:

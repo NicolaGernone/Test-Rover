@@ -1,4 +1,4 @@
-from src.config.choices import DIRECTIONS, TURNS
+from src.config.choices import Direction, Turn
 
 
 class Command:
@@ -28,7 +28,7 @@ class MoveCommand(Command):
         Args:
             rover (Rover): The rover on which to execute the command.
         """
-        dx, dy = DIRECTIONS[rover.orientation]
+        dx, dy = rover.orientation.value
         new_x, new_y = rover.x + dx, rover.y + dy
         if rover.plateau.is_within_bounds(x=new_x, y=new_y):
             rover.x, rover.y = new_x, new_y
@@ -55,4 +55,4 @@ class TurnCommand(Command):
         Args:
             rover (Rover): The rover on which to execute the command.
         """
-        rover.orientation = TURNS[self.direction][rover.orientation]
+        rover.orientation = Turn[self.direction].value[rover.orientation]
