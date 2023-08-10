@@ -3,6 +3,8 @@ from dataclasses import dataclass
 from src.core.command import MoveCommand, TurnCommand
 from src.core.plateau import Plateau
 
+from src.config.choices import Turn
+
 
 @dataclass
 class Rover:
@@ -16,10 +18,10 @@ class Rover:
     plateau: Plateau
 
     COMMANDS = {
-        Turn.LEFT.value: lambda: TurnCommand(Turn.LEFT),
-        Turn.RIGHT.value: lambda: TurnCommand(Turn.RIGHT),
-        "M": MoveCommand,
-    }
+    'M': MoveCommand,
+    'L': lambda: TurnCommand(Turn.LEFT),
+    'R': lambda: TurnCommand(Turn.RIGHT)
+}
 
     def process_commands(self, commands) -> None:
         """

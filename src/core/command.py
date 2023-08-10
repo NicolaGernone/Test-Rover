@@ -55,4 +55,4 @@ class TurnCommand(Command):
         Args:
             rover (Rover): The rover on which to execute the command.
         """
-        rover.orientation = Turn[self.direction].value[rover.orientation]
+        rover.orientation = self.direction.value[rover.orientation]
