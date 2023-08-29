@@ -3,8 +3,11 @@ PYTHON = .venv/bin/python3
 SCRIPT = main.py
 SRC = src
 
+pypath:
+	export PYTHONPATH="$PYTHONPATH:/path/to/directory/containing/src"
+
 # Create a virtual environment
-setup:
+setup: pypath
 	python3 -m venv .venv
 	$(PYTHON) -m pip install -U pip
 	$(PYTHON) -m pip install -r requirements/requirements.txt
@@ -23,11 +26,11 @@ profile:
 	$(PYTHON) -m cProfile -s cumtime $(SRC)/$(SCRIPT)
 
 # Run the script
-run:
+run: pypath
 	$(PYTHON) $(SRC)/$(SCRIPT)
 
 # Run tests
-test:
+test: pypath
 	$(PYTHON) -m pytest $(SRC)/tests/
 
 # Reformat code
@@ -35,7 +38,7 @@ lint:
 	black .
 
 # Measure code coverage
-coverage:
+coverage: pypath
 	$(PYTHON) -m pytest --cov-report term --cov=$(SRC)
 
 clean:

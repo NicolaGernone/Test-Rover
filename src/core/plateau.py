@@ -23,4 +23,6 @@ class Plateau:
         Returns:
             bool: True if the point is within the bounds, False otherwise.
         """
-        return 0 <= x <= self.width and 0 <= y <= self.height
+        if (x <= self.width and y <= self.height) and (x >= 0 and y >= 0):
+            return True
+        raise ValueError("The rover has moved out of the plateau's bounds.")
